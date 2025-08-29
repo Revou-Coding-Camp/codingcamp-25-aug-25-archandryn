@@ -26,3 +26,7 @@
   transform: scale(1.05);
   filter: hue-rotate(180deg);
 }
+
+.tight-line {
+  line-height: 1.2;
+}
