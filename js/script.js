@@ -13,8 +13,37 @@ function validateForm() {
   let sex = document.getElementById("sex-input").value;
   let message = document.getElementById("message-input").value.trim();
 
-  if (!name || !birthdate || !sex) {
-    alert("Please fill out all required fields.");
+  // Validate name: only letters and spaces, allow single quote
+  const nameRegex = /^[A-Za-z\s']+$/;
+  if (!nameRegex.test(name)) {
+    alert("Name can only contain letters, spaces, and single quotes.");
+    return;
+  }
+
+  // Validate birthdate: must be a valid date and not in the future
+  if (!birthdate) {
+    alert("Please enter your birthdate.");
+    return;
+  }
+
+  const birthDate = new Date(birthdate);
+  const today = new Date();
+  const minAgeDate = new Date();
+  minAgeDate.setFullYear(today.getFullYear() - 120); // Max 120 years ago
+
+  if (birthDate > today) {
+    alert("Birthdate cannot be in the future.");
+    return;
+  }
+
+  if (birthDate < minAgeDate) {
+    alert("Please enter a valid birthdate.");
+    return;
+  }
+
+  // Check if all required fields are filled
+  if (!sex) {
+    alert("Please select your sex.");
     return;
   }
 
