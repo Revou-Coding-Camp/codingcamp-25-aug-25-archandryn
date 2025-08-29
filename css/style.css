@@ -1,0 +1,28 @@
+/* Logo Style */
+.logo {
+  background-image: url(https://picsum.photos/200);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Gallery grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 90px);
+  gap: 2px;
+  justify-content: center;
+}
+
+.grid img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.grid img:hover {
+  border-color: #333;
+  transform: scale(1.05);
+  filter: hue-rotate(180deg);
+}

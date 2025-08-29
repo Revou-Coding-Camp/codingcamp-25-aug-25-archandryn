@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cockatoo Company</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex items-center space-x-3">
+        <div class="logo w-12 h-12 rounded-full border-2 border-white shadow"></div>
+        <h1 class="text-xl font-bold">Cockatoo Company</h1>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-2 md:gap-4">
+        <a href="#home-page" class="px-4 py-2 rounded-lg hover:bg-indigo-400 transition">Home</a>
+        <a href="#our-profile" class="px-4 py-2 rounded-lg hover:bg-indigo-400 transition">Profile</a>
+        <a href="#gallery" class="px-4 py-2 rounded-lg hover:bg-indigo-400 transition">Gallery</a>
+        <a href="#message-us" class="px-4 py-2 rounded-lg hover:bg-indigo-400 transition">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <hr class="border-gray-300" />
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-6">
+    <!-- Home -->
+    <section id="home-page" class="py-6">
+      <header>
+        <h2 class="text-2xl font-bold text-center mb-4">
+          Welcome <span id="username" class="text-indigo-600"></span> to Our Website
+        </h2>
+      </header>
+      <p class="text-center max-w-2xl mx-auto">
+        We are a team of dedicated professionals committed to delivering high-quality services to our clients.
+      </p>
+    </section>
+
+    <hr class="border-gray-300 my-6" />
+
+    <!-- Our Profile -->
+    <section id="our-profile" class="py-6">
+      <header>
+        <h2 class="text-2xl font-bold text-center mb-4">Our Profile</h2>
+      </header>
+      <div class="max-w-3xl mx-auto text-justify space-y-4">
+        <p>Revou is a leading educational technology (EdTech) company based in Indonesia...</p>
+        <!-- Paste full text content here -->
+      </div>
+    </section>
+
+    <hr class="border-gray-300 my-6" />
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-6">
+      <header>
+        <h2 class="text-2xl font-bold text-center mb-4">Gallery</h2>
+      </header>
+      <div class="grid" id="tilesGrid"></div>
+    </section>
+
+    <hr class="border-gray-300 my-6" />
+
+    <!-- Message Us -->
+    <section id="message-us" class="py-6">
+      <header>
+        <h2 class="text-2xl font-bold text-center mb-4">Message Us</h2>
+      </header>
+
+      <div class="flex flex-col md:flex-row gap-6">
+        <form id="message-form" class="md:w-1/2 space-y-4">
+          <label class="block">
+            Name:
+            <input type="text" id="name-input" class="w-full border rounded p-2 mt-1" required />
+          </label>
+
+          <label class="block">
+            Birthdate:
+            <input type="date" id="birthdate-input" class="w-full border rounded p-2 mt-1" required />
+          </label>
+
+          <label class="block">
+            Sex:
+            <select id="sex-input" class="w-full border rounded p-2 mt-1" required>
+              <option value="">-- Select --</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </label>
+
+          <label class="block">
+            Message:
+            <textarea id="message-input" rows="5" class="w-full border rounded p-2 mt-1"></textarea>
+          </label>
+
+          <button type="button" onclick="validateForm()" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700 transition">
+            Send Message
+          </button>
+        </form>
+
+        <div id="form-output" class="md:w-1/2 border rounded p-4 bg-white shadow-sm">
+          <h3 class="font-bold text-lg mb-2">Your Input:</h3>
+          <p><strong>Name:</strong> <span id="output-name">-</span></p>
+          <p><strong>Birthdate:</strong> <span id="output-birthdate">-</span></p>
+          <p><strong>Sex:</strong> <span id="output-sex">-</span></p>
+          <p><strong>Message:</strong> <span id="output-message" class="block mt-1">-</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <hr class="border-gray-300" />
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 text-center py-6 text-sm text-gray-600">
+    <p>&copy; 2025 Cockatoo Company.</p>
+    <p class="mt-1">“No rights reserved—take it, but don’t blame me.”</p>
+  </footer>
+
+  <!-- External JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
